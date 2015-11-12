@@ -1,0 +1,30 @@
+{% extends "staff/base.html" %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-datetimepicker.min.css" />
+{% endblock css %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Barcode</h2>
+        </div>
+    </div>
+<div class="container mt30">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form method="post" id="form" action="." enctype="multipart/form-data" class="infotabs accfrm">
+                {% include 'staff/_form.html' %}
+                <hr />
+                <button type="submit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block bottom_javascript %}
+<script type="text/javascript" language="JavaScript">
+    document.forms['form'].elements['code'].focus();
+</script>
+{% endblock bottom_javascript %}
